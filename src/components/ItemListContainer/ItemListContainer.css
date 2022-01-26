@@ -1,0 +1,12 @@
+.saludo {
+    height: 350px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEFFEE;
+}
+
+h2 {
+    color: #379339;
+}
