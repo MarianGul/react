@@ -1,9 +1,25 @@
 import { CartWidget } from '../CartWidget/CartWidget';
-import './NavBar.css';
+import { Navbar, Container, Nav } from 'react-bootstrap';
+
 
 export const NavBar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+        <Navbar expand="lg" fixed='top'>
+            <Container>
+                <Navbar.Brand href="#home">Pet Shop</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="ms-auto">
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#link">Perros</Nav.Link>
+                        <Nav.Link href="#link">Gatos</Nav.Link>
+                        <Nav.Link href="#link">Contacto</Nav.Link>
+                    </Nav>
+                    <CartWidget />
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+        /*<nav className="navbar navbar-expand-lg navbar-light fixed-top">
             <div className="container">
                 <h1 className="navbar-brand">Pet Shop</h1>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,6 +43,6 @@ export const NavBar = () => {
                     <CartWidget />
                 </div>
             </div>
-        </nav>
+        </nav>*/
     )
 }
