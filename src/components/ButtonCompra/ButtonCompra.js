@@ -3,7 +3,7 @@ import { useState } from "react";
 
 
 export const ButtonCompra = () => {
-    let[clicks, setClicks] = useState(0)
+    let[clicks, setClicks] = useState(1)
 
     const increase = () => {
         setClicks(clicks + 1)
