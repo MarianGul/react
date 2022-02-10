@@ -1,13 +1,11 @@
-import { Card, Col, Button } from "react-bootstrap"
-//import { ButtonCompra } from "../ButtonCompra/ButtonCompra"
+import { Card, Button } from "react-bootstrap"
 
-
-export const Item = ( {id, nombre, precio, imagen, desc} ) => {
+export const ItemDetail = ({id, nombre, categoria, precio, desc, imagen}) => {
 
     return (
-        <Col xl="3" lg="4" md="6" className="mb-3">
-        <Card>
-            <Card.Img variant="top" src={require(`../../assets/imgs/${imagen}`)} className="card-img-top" alt={nombre} />
+        <div>
+            <Card>
+            <Card.Img variant="top" src={require('../../assets/imgs/'+ imagen)} className="card-img-top" alt={nombre} />
             <Card.Body>
                 <Card.Title>{nombre}</Card.Title>
                 <Card.Text>
@@ -18,10 +16,9 @@ export const Item = ( {id, nombre, precio, imagen, desc} ) => {
                 </Card.Text>
             </Card.Body>
             <Card.Footer>
-                {/*<ButtonCompra />*/}
                 <Button className="btn-compra">Comprar</Button>
             </Card.Footer>
         </Card>
-        </Col>
+        </div>
     )
 }
