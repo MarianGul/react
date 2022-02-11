@@ -1,5 +1,6 @@
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
+import { Footer } from './components/Footer/Footer';
 import { NavBar } from './components/NavBar/NavBar';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,7 +17,7 @@ function App() {
         <Route path='/detail/:itemId' element={ <ItemDetailContainer />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-     
+      <Footer />
     </BrowserRouter>
     </>
   );

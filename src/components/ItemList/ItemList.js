@@ -1,15 +1,17 @@
 import { Item } from "../Item/Item"
-import { MainContainer } from "../MainContainer/MainContainer"
+import { Container } from 'react-bootstrap';
 
 
-export const ItemList = ( {productos} ) => {
+export const ItemList = ( {productos, catId} ) => {
 
     return (
-        <MainContainer>
-            <h2>Productos</h2>
+        <section className="productos">
+        <Container>
+            <h4>Productos {catId ? `| ${catId}` : ''}</h4>
             <div className="row">
                 { productos.map( (el) => <Item key={el.id} {...el}/> )}
             </div>
-        </MainContainer>
+        </Container>
+        </section>
     )
 }

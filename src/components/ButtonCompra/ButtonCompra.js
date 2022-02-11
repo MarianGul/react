@@ -3,24 +3,23 @@ import { useState } from "react";
 
 
 export const ButtonCompra = () => {
-    let[clicks, setClicks] = useState(1)
+    let[amount, setAmount] = useState(1)
 
     const increase = () => {
-        setClicks(clicks + 1)
+        setAmount(amount + 1)
     }
 
     const decrease = () => {
-        setClicks(clicks - 1)
+        amount > 1 && setAmount(amount - 1)
     }
 
     return (
         <>
             <div className="amount">
-                <Button variant="light" onClick={decrease}>-</Button>
-                <div className="amountNumber">{clicks}</div>
+                <Button variant="light" onClick={decrease} disabled={amount === 1}>-</Button>
+                <div className="amountNumber">{amount}</div>
                 <Button variant="light" onClick={increase}>+</Button>
             </div>
-            <Button className="btn-compra">Comprar</Button>
         </>
 
     )

@@ -1,10 +1,14 @@
 import './loader.scss'
+import { Spinner } from 'react-bootstrap'
 
 export const Loader = () => {
 
     return (
-        <div className='loaderContainer'>
-            <div className="loader" id="loader-1"></div>
+        <>
+        <div className='loader-container d-flex justify-content-center align-items-center'>
+        <Spinner animation="border" variant="success" />
         </div>
+        </>
+   
     )
 }

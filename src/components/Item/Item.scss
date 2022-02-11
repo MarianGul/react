@@ -32,54 +32,14 @@
         .precio {
             font-weight: 600;
             font-size: 1.5rem;
-            color: var(--clr-dark-green);
+            color: var(--clr-violet);
         }
         
     }
 
     .card-footer {
         background-color: transparent;
-        display: flex;
-        justify-content: space-between;
-
-        .btn-compra {
-            color: #fff;
-            background-color: var(--clr-green);
-            border-color:  var(--clr-green);
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            &:hover {
-                color: var(--clr-dark-green);
-                border-color:  var(--clr-green);
-                background-color: white;
-            }
-        }
-                
-        .amount {
-            width: 120px;
-            border: 1px solid #a8a8a8;
-            display: flex;
-            border-radius: 10px;
-            align-items: center;
-
-            .btn-light {
-                background: transparent;
-                border: none;
-                color: black;
-            }
-
-            .amountNumber {
-                text-align: center;
-                padding: 0px 10px;
-            }
-        }
-
-        .amount > * {
-            flex: 1;
-        }
+            
 
     }
 }

@@ -1,0 +1,12 @@
+.btn-compra {
+    color: #fff;
+    background-color: var(--clr-green);
+    border-color:  var(--clr-green);
+    font-weight: 600;
+
+    &:hover, &:active, &:focus {
+        color: var(--clr-dark-green);
+        border-color:  var(--clr-green);
+        background-color: white;
+    }
+}

@@ -7,8 +7,9 @@ import { useParams } from "react-router-dom"
 export const ItemDetailContainer = () => {
 
     const [item, setItem] = useState(null)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const {itemId} = useParams()
+    
 
     useEffect( () => {
         setLoading(true)
@@ -17,9 +18,7 @@ export const ItemDetailContainer = () => {
             .then((res) => {
                 setItem(res.find((item) => item.id === parseInt(itemId)))
             })
-            .catch((err) => {
-                console.log(err)
-            })
+
             .finally(() => {
                setLoading(false)
             })

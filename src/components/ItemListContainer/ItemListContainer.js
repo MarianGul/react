@@ -38,7 +38,7 @@ export const ItemListContainer = () => {
             {
                 loading 
                     ? <Loader /> 
-                    : <ItemList productos={productos}/>	
+                    : <ItemList productos={productos} catId={catId}/>	
             } 
         </>
     )

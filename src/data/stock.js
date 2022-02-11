@@ -5,7 +5,8 @@ export const stock = [
           categoria:"gato",
           precio:2700,
           desc: "Alimento balanceado",
-          imagen: "excellent-gato.jpg"
+          imagen: "excellent-gato.jpg",
+          stock: 25
         },
         {
           id:2,
@@ -13,7 +14,8 @@ export const stock = [
           categoria:"gato",
           precio:1700,
           desc: "Alimento balanceado",
-          imagen: "old-prince-gato.jpg"
+          imagen: "old-prince-gato.jpg",
+          stock: 25
         },
         {
           id:3,
@@ -21,7 +23,8 @@ export const stock = [
           categoria:"perro",
           precio:3200,
           desc: "Alimento balanceado",
-          imagen: "pro-plan.png"
+          imagen: "pro-plan.png",
+          stock: 25
         },
         {
           id:4,
@@ -29,7 +32,8 @@ export const stock = [
           categoria:"perro",
           precio:1400,
           desc: "Alimento balanceado",
-          imagen: "excellent.png"
+          imagen: "excellent.png",
+          stock: 25
         },
         {
           id:5,
@@ -37,7 +41,8 @@ export const stock = [
           categoria:"perro",
           precio:2700,
           desc: "Alimento balanceado",
-          imagen: "old-prince-perro.jpg"
+          imagen: "old-prince-perro.jpg",
+          stock: 25
         },
         {   
           id:6,
@@ -45,7 +50,8 @@ export const stock = [
           categoria:"gato",
           precio:1900,
           desc: "Alimento balanceado",
-          imagen: "balanced-vital-cat.jpg"
+          imagen: "balanced-vital-cat.jpg",
+          stock: 25
       },
   
       {   
@@ -54,7 +60,8 @@ export const stock = [
           categoria:"perro",
           precio:1600,
           desc: "Juguete",
-          imagen: "bite-flavor-perro.jpg"
+          imagen: "bite-flavor-perro.jpg",
+          stock: 25
       },
   
       {   
@@ -63,7 +70,8 @@ export const stock = [
           categoria:"perro",
           precio:1850,
           desc: "Juguete",
-          imagen: "fitness-soga-perro.jpg"
+          imagen: "fitness-soga-perro.jpg",
+          stock: 25
       },
   
       {   
@@ -72,7 +80,8 @@ export const stock = [
           categoria:"perro",
           precio:500,
           desc: "Juguete",
-          imagen: "pelota-rubber.jpg"
+          imagen: "pelota-rubber.jpg",
+          stock: 25
       },
   
       {   
@@ -81,6 +90,7 @@ export const stock = [
           categoria:"perro",
           precio:1800,
           desc: "Juguete",
-          imagen: "toy-aro.jpg"
+          imagen: "toy-aro.jpg",
+          stock: 25
       }
 ]
