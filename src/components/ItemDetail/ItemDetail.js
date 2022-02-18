@@ -1,10 +1,25 @@
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import { ButtonCompra } from '../ButtonCompra/ButtonCompra';
+import { ItemCount } from '../ItemCount/ItemCount';
 import { BsTruck, BsPinMap } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import tarjetas from '../../assets/imgs/tarjetas.png'
+import { useContext, useState } from 'react';
+import { CartContext } from '../CartContext/CartContext';
 
 export const ItemDetail = ({id, nombre, categoria, precio, desc, imagen, stock}) => {
+
+    const [quantity, setQuantity] = useState(1)
+    const [purchase, setPurchase] = useState(false)
+    const {cart, addToCart} = useContext(CartContext)
+
+    const handleAdd = () => {
+        const addItem = {
+            id, nombre, precio, imagen, stock, quantity
+        }
+        addToCart(id, addItem, quantity)
+        setPurchase(true)
+    }
+  
 
     return (
         <section className="detalle">
@@ -22,9 +37,15 @@ export const ItemDetail = ({id, nombre, categoria, precio, desc, imagen, stock})
                             <p className='stock'>{stock} disponibles</p>
                         </div>
                         <div className='comprar'>
-                        <ButtonCompra></ButtonCompra>
-                        <Button className='btn-compra'>Agregar al Carrito</Button>
-                        </div>
+                        <ItemCount max={stock} counter={quantity} setCounter={setQuantity} />
+                        <Button className='btn-compra' onClick={handleAdd}>Agregar</Button>
+                        </div>                  
+                        {
+                           purchase
+                           ? <><Button as={Link} to="/cart" className='btn-terminar mt-3 me-3'>Terminar mi Compra</Button>
+                             <Button as={Link} to="/" className='btn-terminar mt-3 me-3'>Seguir Comprando</Button></>
+                            : ''
+                        }
                         <div className='opciones'>
                             <h6>Opciones de Envio:</h6>
                             <div className='envio'>

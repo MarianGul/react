@@ -1,0 +1,24 @@
+.quantity {
+    width: 120px;
+    border: 1px solid #a8a8a8;
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    margin-right: 15px;
+
+    .btn-light {
+        background: transparent;
+        border: none;
+        color: black;
+
+    }
+
+    &__number {
+        text-align: center;
+        padding: 0px 10px;
+    }
+
+    & > * {
+        flex: 1; 
+    }
+}

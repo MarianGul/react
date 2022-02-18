@@ -1,0 +1,36 @@
+.cart {
+    padding-top: 150px;
+    height: 100vh;
+
+    .total {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+
+    &__text {
+        flex: 1;
+    }
+
+    &__price {
+        font-weight: 600;
+        color: var(--clr-violet);
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+    &__img {
+        width: 90px;
+        position: relative;
+
+        span {
+           background-color: var(--clr-violet);
+           border-radius: 1rem;
+        }
+    }
+
+    &__delete {
+        button {
+            border-radius: 1.5rem;
+        }
+    }
+}

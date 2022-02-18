@@ -10,3 +10,16 @@
         background-color: white;
     }
 }
+
+.btn-terminar {
+    color: #fff;
+    background-color: var(--clr-violet);
+    border-color:  var(--clr-violet);
+    font-weight: 600;
+
+    &:hover, &:active, &:focus {
+        color: var(--clr-violet);
+        border-color:  var(--clr-violet);
+        background-color: white;
+    }
+}
