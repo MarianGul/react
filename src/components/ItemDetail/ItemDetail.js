@@ -4,22 +4,22 @@ import { BsTruck, BsPinMap } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import tarjetas from '../../assets/imgs/tarjetas.png'
 import { useContext, useState } from 'react';
-import { CartContext } from '../CartContext/CartContext';
+import { CartContext } from "../../context/CartContext";
 
 export const ItemDetail = ({id, nombre, categoria, precio, desc, imagen, stock}) => {
 
     const [quantity, setQuantity] = useState(1)
     const [purchase, setPurchase] = useState(false)
-    const {cart, addToCart} = useContext(CartContext)
+    const {cart, addToCart, checkStock} = useContext(CartContext)
 
     const handleAdd = () => {
         const addItem = {
             id, nombre, precio, imagen, stock, quantity
         }
-        addToCart(id, addItem, quantity)
+        checkStock(id, addItem) ? console.log('no podes comprar mas') : addToCart(id, addItem, quantity)
         setPurchase(true)
     }
-  
+
 
     return (
         <section className="detalle">

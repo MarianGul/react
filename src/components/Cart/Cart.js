@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { CartContext } from "../CartContext/CartContext"
+import { CartContext } from "../../context/CartContext";
 import { Container, Row, Col, ListGroup, Button } from 'react-bootstrap';
 import { BsFillTrashFill } from "react-icons/bs";
 

@@ -20,6 +20,14 @@ export const CartProvider = ({children}) => {
         }
     }
 
+    const checkStock = (id, items) => {
+        const idItem = cart.find((item) => item.id === id)
+       if(idItem) {
+            return idItem.quantity + items.quantity > idItem.stock
+        }
+     
+    }
+
     const quantityCart = () => {
         return cart.reduce((acc, item) => acc + item.quantity, 0)
     }
@@ -37,7 +45,7 @@ export const CartProvider = ({children}) => {
     }
 
     return (
-        <CartContext.Provider value={{cart, addToCart, isInCart, quantityCart, deleteItem, totalPurchase, emptyCart}}>
+        <CartContext.Provider value={{cart, addToCart, isInCart, quantityCart, deleteItem, totalPurchase, emptyCart, checkStock}}>
             {children}
         </CartContext.Provider>
     )
