@@ -10,5 +10,9 @@
     &:hover {
         color: var(--clr-violet);
     }
+
+    &.hidden {
+        visibility: hidden;
+    }
 }    
     

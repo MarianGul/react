@@ -1,10 +1,13 @@
 import { Item } from "../Item/Item"
 import { Container } from 'react-bootstrap';
+import { Header } from "../Header/Header";
 
 
 export const ItemList = ( {productos, catId} ) => {
 
     return (
+        <>
+        <Header catId={catId}></Header>
         <section className="productos">
         <Container>
             <h4>Productos {catId ? `| ${catId}` : ''}</h4>
@@ -13,5 +16,6 @@ export const ItemList = ( {productos, catId} ) => {
             </div>
         </Container>
         </section>
+        </>
     )
 }

@@ -1,0 +1,24 @@
+.header-productos {
+    width: 100%;
+    background-position: center center !important;
+    margin-top: 85px;
+
+    &.home {
+        background: url('../../assets/imgs/header.jpg');
+        height: 300px;
+        @media only screen and (max-width: 768px) {
+            background: url('../../assets/imgs/header-mobile.jpg');
+        }
+        
+    }
+
+    &.gato {
+        background: url('../../assets/imgs/header-gato.jpg');
+        height: 200px;
+    }
+
+    &.perro {
+        background: url('../../assets/imgs/header-perro.jpg');
+        height: 200px;
+    }
+}

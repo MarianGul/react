@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 
 export const CartWidget = () => {
 
-    const {quantityCart} = useContext(CartContext)
+    const {quantityCart, cart} = useContext(CartContext)
 
     return (
         <>
-        <Button as={Link} to='/cart' variant="outline-light" className="position-relative iconCart">
+        <Button as={Link} to='/cart' variant="outline-light" className={`position-relative iconCart ${cart.length === 0? 'hidden' : ''}`}>
             <BsCart2 size='1.5em' />
             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light">
                 {quantityCart()}

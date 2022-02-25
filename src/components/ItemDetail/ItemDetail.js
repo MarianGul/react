@@ -10,14 +10,19 @@ export const ItemDetail = ({id, nombre, categoria, precio, desc, imagen, stock})
 
     const [quantity, setQuantity] = useState(1)
     const [purchase, setPurchase] = useState(false)
-    const {cart, addToCart, checkStock} = useContext(CartContext)
+    const [stockMessage, setStockMessage] = useState('')
+    const {cart, addToCart, checkStock, getPosibleStock} = useContext(CartContext)
 
     const handleAdd = () => {
         const addItem = {
             id, nombre, precio, imagen, stock, quantity
         }
-        checkStock(id, addItem) ? console.log('no podes comprar mas') : addToCart(id, addItem, quantity)
+        checkStock(id, addItem) ? handleNotBuy() : addToCart(id, addItem, quantity)
         setPurchase(true)
+    }
+
+    const handleNotBuy = () => {
+        setStockMessage(`Ya tenes este producto en el carrito. El maximo que podes agregar son ${stock - getPosibleStock(id)} unidades`)
     }
 
 
@@ -39,7 +44,9 @@ export const ItemDetail = ({id, nombre, categoria, precio, desc, imagen, stock})
                         <div className='comprar'>
                         <ItemCount max={stock} counter={quantity} setCounter={setQuantity} />
                         <Button className='btn-compra' onClick={handleAdd}>Agregar</Button>
-                        </div>                  
+                        </div>
+                        <div className='mensaje'>{stockMessage}</div>
+
                         {
                            purchase
                            ? <><Button as={Link} to="/cart" className='btn-terminar mt-3 me-3'>Terminar mi Compra</Button>
