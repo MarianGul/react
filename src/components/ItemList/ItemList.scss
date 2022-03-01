@@ -1,5 +1,5 @@
 .productos {
-    padding-top: 120px;
+    padding-top: 80px;
     padding-bottom: 50px;
 
     h4 {
@@ -7,4 +7,30 @@
         margin-bottom: 25px;
     
     }
+}
+
+.envioInfo {
+    margin-top: 50px;
+
+    p {
+        font-weight: 600;
+        line-height: 1.2rem;
+        font-size: 1.2rem;
+    }
+
+    .icon {
+        margin-right: 15px;
+        border-radius: 50px;
+        border: solid 3px var(--clr-green);
+        padding: 15px;
+        svg {
+            font-size: 4em;
+            color: var(--clr-green);
+
+            @media only screen and (max-width: 768px) {
+                font-size: 2em;
+            }
+        }
+    }
+
 }

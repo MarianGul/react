@@ -37,13 +37,13 @@ export const Cart = () => {
                         <ListGroup.Item key={item.id} className="d-flex justify-content-between align-items-center">
                             <div className="cart__img">
                                 <span className="badge">{item.quantity}</span>
-                                <img src={require(`../../assets/imgs/${item.imagen}`)} alt={item.nombre} />
+                                <img src={require(`../../assets/imgs/${item.image}`)} alt={item.name} />
                             </div>
                             <div className="cart__text">
-                            <p>{item.nombre}</p>
+                            <p>{item.name}</p>
                             </div>
                             <div className="cart__price">
-                            <p>${item.precio * item.quantity}</p>
+                            <p>${item.price * item.quantity}</p>
                             </div>
                             <div className="cart__delete">
                                 <Button onClick={() => deleteItem(item.id)} variant="light"><BsFillTrashFill size='1.2em' /></Button>
@@ -54,8 +54,8 @@ export const Cart = () => {
                         </ListGroup>
                    </Col>
                     <Col md='6'>
-                       <Button className='mt-3 me-3 btn-terminar'>Terminar mi compra</Button>
-                       <Button onClick={emptyCart} className='mt-3 me-3' variant='danger'>Vaciar Carrito</Button>
+                       <Button className='mt-3 me-3 btn-terminar' as={Link} to="/checkout">Terminar mi compra</Button>
+                       <Button onClick={emptyCart} className='mt-3 me-3 fw-bold' variant='danger'>Vaciar Carrito</Button>
                     </Col>
                     <Col md='6'>
                         <p className="total text-end">Total: ${totalPurchase()}</p>

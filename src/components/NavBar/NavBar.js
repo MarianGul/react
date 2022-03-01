@@ -9,7 +9,7 @@ export const NavBar = () => {
     return (
         <Navbar expand="lg" fixed='top' variant="dark">
             <Container>
-                <Navbar.Brand as={Link} to="/" className='fw-bold'>PetShop <FaDog size='1.2em' /> <FaCat size='1em' /></Navbar.Brand>
+                <Navbar.Brand as={Link} to="/" className='fw-bold'>Dogs <span className='fw-light'>&</span> Cats <FaDog size='1.2em' /> <FaCat size='1em' /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">

@@ -18,7 +18,7 @@ export const ItemListContainer = () => {
         setLoading(true)
 
         const prodRef = collection (db, 'productos')
-        const q = catId ? query(prodRef, where('categoria', '==', catId)) : prodRef
+        const q = catId ? query(prodRef, where('category', '==', catId)) : prodRef
         getDocs(q)
         .then((resp) => {
             setProductos(resp.docs.map((doc) => {
@@ -33,6 +33,7 @@ export const ItemListContainer = () => {
         })
 
     }, [catId])
+
 
     return (
         <>

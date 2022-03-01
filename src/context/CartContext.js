@@ -6,30 +6,28 @@ export const CartProvider = ({children}) => {
 
     const [cart, setCart] = useState([])
 
-    const isInCart = (id) => {
-        return cart.some((item) => item.id === id)
-    }
+    const addToCart = (id, items, price, counter) => {
+        const product = cart.find((item) => item.id === id)
 
-    const addToCart = (id, items, counter) => {
-        const idItem = cart.find((item) => item.id === id)
-
-        if (idItem) {
-            setCart(cart.map((prod)=> prod.id === items.id ? {...idItem, quantity: idItem.quantity + counter} : prod))
+        if (product) {
+            setCart(cart.map((prod)=> prod.id === items.id ?
+            {...product, price: price, quantity: product.quantity + counter}
+            : prod))
         } else {
-            setCart([...cart, {...items, quantity: counter}])
+            setCart([...cart, {...items, price: price, quantity: counter}])
         }
     }
 
     const checkStock = (id, items) => {
-        const idItem = cart.find((item) => item.id === id)
-       if(idItem) {
-            return idItem.quantity + items.quantity > idItem.stock
+        const product = cart.find((item) => item.id === id)
+       if(product) {
+            return product.quantity + items.quantity > product.stock
         }
     }
 
     const getPosibleStock = (id) => {
-        const idItem = cart.find((item) => item.id === id)
-        return idItem.quantity
+        const product = cart.find((item) => item.id === id)
+        return product.quantity
     }
 
     const quantityCart = () => {
@@ -41,15 +39,30 @@ export const CartProvider = ({children}) => {
     }
 
     const totalPurchase = () => {
-        return cart.reduce((acc, item) => acc + item.quantity * item.precio, 0)
+        return cart.reduce((acc, item) => acc + item.quantity * item.price, 0)
     }
 
     const emptyCart = () => {
         setCart([])
     }
 
+    const finalOffer = (price, offer) => {
+        return offer ? price * 0.80 : price
+    }
+
+
     return (
-        <CartContext.Provider value={{cart, addToCart, isInCart, quantityCart, deleteItem, totalPurchase, emptyCart, checkStock, getPosibleStock}}>
+        <CartContext.Provider value={{
+            cart,
+            addToCart,
+            quantityCart,
+            deleteItem,
+            totalPurchase,
+            emptyCart,
+            checkStock,
+            getPosibleStock,
+            finalOffer
+            }}>
             {children}
         </CartContext.Provider>
     )

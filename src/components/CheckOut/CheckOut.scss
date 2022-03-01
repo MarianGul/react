@@ -1,0 +1,33 @@
+.checkout, .thanyou {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    min-height: 100vh;
+    
+
+    .table-striped>tbody>tr:nth-of-type(odd)>* {
+        background-color: #fbf5ff;
+    }
+
+    form {
+
+        .error {
+            height: 15px;
+            font-size: 0.8rem;
+            color: red;
+            margin: 5px 0px;
+        }
+    
+        .errorText {
+            border:1px solid red;
+        }
+    }
+
+    .outStockMessage {
+        padding: 5px;
+        border: solid 1px red;
+        text-align: center;
+        font-weight: 600;
+        color: red;
+    }
+
+}

@@ -5,6 +5,19 @@
     height: 100%;
     padding-bottom: 15px;
 
+    .oferta {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        background-color: var(--clr-violet);
+        border-radius: 8px;
+        font-size: 1.3rem;
+        color: white;
+        padding: 5px 10px;
+        font-weight: 600;
+        z-index: 1;
+    }
+
     .card-image {
         overflow: hidden;
         min-height: 200px;
@@ -33,6 +46,7 @@
             font-weight: 600;
             font-size: 1.5rem;
             color: var(--clr-violet);
+
         }
         
     }
@@ -42,6 +56,56 @@
             
 
     }
+}
+
+.offer-text {
+    color: var(--clr-light-gray);
+    text-decoration: line-through;
+    font-weight: 300;
+    display: block;
+}
+
+.sinstock {
+    color: var(--clr-light-gray);
+
+    img {
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+    }
+
+    .precio {
+        &.card-text {
+            color: var(--clr-light-gray); 
+        }
+    }
+
+    .btn-compra {
+        background-color: var(--clr-light-gray);
+        border: var(--clr-light-gray);
+
+        &:hover {
+            background-color: var(--clr-light-gray);
+            color: white; 
+        }
+    }
+
+    .textstock {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        background-color: var(--clr-light-gray);
+        border-radius: 8px;
+        font-size: 1.3rem;
+        color: white;
+        padding: 5px 10px;
+        font-weight: 600;
+        z-index: 1;
+        display: block;
+    }
+}
+
+.textstock {
+    display: none;
 }
 
 
