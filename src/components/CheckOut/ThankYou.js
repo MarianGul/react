@@ -33,7 +33,7 @@ export const ThankYou = ({orderId, values}) => {
                         <td>{values.postalcode}</td>
                     </tr>
                     <tr>
-                        <th>Número de pedido</th>
+                        <th>Id de pedido</th>
                         <td>{orderId}</td>
                     </tr>
                 </tbody>
